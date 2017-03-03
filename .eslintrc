@@ -1,0 +1,18 @@
+{
+    "extends": "standard",
+    "plugins": [
+        "html"
+    ],
+    "env": {
+        "jasmine": true
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ]
+    }
+}
