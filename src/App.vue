@@ -1,6 +1,6 @@
 <template>
     <main id="app">
-        <router-view></router-view>
+        <router-view @feed-added="addFeed($event.feedUrl)"></router-view>
     </main>
 </template>
 
@@ -14,9 +14,13 @@
             }
         },
         methods: {
-            addFeed: (feed) => {
+            addFeed(feed) {
                 this.feeds.push(feed)
             }
         }
     }
 </script>
+
+<style lang="sass">
+    @import 'scss/main';
+</style>
