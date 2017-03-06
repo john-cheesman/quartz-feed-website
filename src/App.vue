@@ -1,6 +1,6 @@
 <template>
     <main id="app">
-        <router-view @feed-added="addFeed($event.feed)"></router-view>
+        <router-view @got-feed="addFeed($event.feed)"></router-view>
     </main>
 </template>
 

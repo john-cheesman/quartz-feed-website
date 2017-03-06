@@ -3,7 +3,7 @@
         <h1>Add a new feed.</h1>
         <p>Enter the feed URL below:</p>
 
-        <form id="feed-form" @submit.prevent="addFeed(feedUrl)">
+        <form id="feed-form" @submit.prevent="getFeed(feedUrl)">
             <input type="url" name="feedUrl" v-model="feedUrl" />
             <button type="submit">Add feed</button>
         </form>
@@ -22,12 +22,12 @@
             }
         },
         methods: {
-            addFeed(feedUrl) {
+            getFeed(feedUrl) {
                 this.$http.get(`${config.feedApiBase}getFeed?url=${feedUrl}`)
                     .then((response) => {
                         console.log(response)
 
-                        this.$emit('feed-added', { feed: new Feed(response.body) })
+                        this.$emit('got-feed', { feed: new Feed(response.body) })
                     },
                     (error) => {
                         console.warn(error)
