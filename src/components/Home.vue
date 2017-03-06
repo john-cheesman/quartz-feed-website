@@ -6,7 +6,7 @@
         <h2>Feeds</h2>
 
         <ul v-for="feed in $parent.feeds">
-            <li>{{ feed }}</li>
+            <li>{{ feed.title }} - {{ feed.description }}</li>
         </ul>
     </div>
 </template>
