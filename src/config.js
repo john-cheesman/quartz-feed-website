@@ -1,6 +1,6 @@
 const config = {
     siteName: 'Quartz Feed',
-    feedApiBase: 'http://quartz-feed-api.johncheesman.org.uk/'
+    feedApiBase: 'https://quartz-feed-api.herokuapp.com/'
 }
 
 export default config
