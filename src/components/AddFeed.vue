@@ -11,7 +11,6 @@
 </template>
 
 <script>
-    import Feed from '../classes/Feed.js'
     import config from '../config.js'
 
     export default {
@@ -26,8 +25,9 @@
                 this.$http.get(`${config.feedApiBase}getFeed?url=${feedUrl}`)
                     .then((response) => {
                         console.log(response)
-
-                        this.$emit('got-feed', { feed: new Feed(response.body) })
+                        if (response.body) {
+                            this.$emit('got-feed', response.body)
+                        }
                     },
                     (error) => {
                         console.warn(error)

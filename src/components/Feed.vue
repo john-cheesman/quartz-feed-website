@@ -1,21 +1,21 @@
 <template>
     <article class="feed">
-        <h2>{{ title }}</h2>
-	<div>{{ description }}</div>
+        <h3>{{ title }}</h3>
+        <div>{{ description }}</div>
     </article>
 </template>
 
 <script>
     export default {
         name: 'feed',
-	data: [
-	    feedData    
-	],
-	data() {
+        props: [
+            'feedData'
+        ],
+        data() {
             return {
-	        title: this.feedData.title,
-	        description: this.feedData.description
-	    }
-	}
+                title: this.feedData.title,
+                description: this.feedData.description
+            }
+        }
     }
 </script>
