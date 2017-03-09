@@ -6,6 +6,7 @@
 
 <script>
     import config from './config.js'
+    import router from './router.js'
 
     export default {
         name: 'app',
@@ -25,6 +26,7 @@
                 console.log(feed)
                 this.feeds.push(feed)
                 this.getFeedItems()
+                router.push('/')
             },
             getFeedItems() {
                 this.$http.get(`${config.feedApiBase}getAggregatedFeedItems?urls=${this.feedUrls.join(',')}`)
